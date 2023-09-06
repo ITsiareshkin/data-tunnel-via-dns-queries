@@ -1,0 +1,58 @@
+Tunneling of data transmissions via DNS queries
+
+## Author
+
+Ivan Tsiareshkin, xtsair00
+
+## Description
+
+This project is client-server application, that tunnels data through DNS queries.
+
+The client application sends data to the server. Activity stops when entire input file is sent.
+
+The server application listens on the port 53. Incoming data will be saved to the specified file.
+
+Two applications communicate with IPv4 as a network protocol and UDP as a transport protocol, data is encoded/decoded using base32
+
+TCP or IPv6 is not supported
+
+
+## Compilation
+
+Build both sender and receiver:
+
+```
+make  # or make all
+```
+
+- Build only sender:
+
+```
+make sender
+```
+
+- Build only receiver:
+
+```
+make receiver
+```
+
+- Archive the content of this folder:
+
+```
+make archive
+```
+
+## Usage
+
+- Start server:
+
+```
+sudo ./dns_receiver <host_base> <dst_filepath>
+```
+
+- Send file:
+
+```
+./dns_sender -u <UPSTREAM_DNS_IP> <host_base> <dst_filepath> <src_filepath>
+```
