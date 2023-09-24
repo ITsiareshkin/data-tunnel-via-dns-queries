@@ -7,7 +7,7 @@
 #define CHUNCK_SIZE 100 // maximum length of raw data that could be stored into DNS-query
 #define MAX_LABEL_SIZE 63
 
-#define PORT 12345 // dns port
+#define PORT 53 // dns port
 #define SIZE 1024
 
 //Structure that represents dns header
